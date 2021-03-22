@@ -1,0 +1,47 @@
+<div>
+    <div>Search by </div>
+    <div>
+        <select name="searchby" [(ngModel)]="selectedCriteria">
+            <option value="''">
+                -Select-
+            </option>
+            <option value="getalldept">
+                Get all departments
+            </option>
+            <option value="getallemp">
+                Get all employees
+            </option>
+            <option value="getbymgr">
+                Get employees by manager
+            </option>
+            <option value="getbydept">
+                Get employees by department
+            </option>
+        </select>
+    </div>
+    <div>
+        <input type="button" value="Get" (click)="getData()" />
+    </div>
+</div>
+<div *ngIf="selectedCriteria==='getbymgr'">
+    <div>Managers: </div>
+    <div>
+        <select name="searchmanager" [(ngModel)]="selectedManager">
+            <option>
+
+            </option>
+        </select>
+    </div>
+</div>
+<div *ngIf="selectedCriteria==='getbydept'">
+    <div>
+        Departments:
+    </div>
+    <div>
+        <select name="searchdepartment" [(ngModel)]="selectedDepartment">
+            <option>
+
+            </option>
+        </select>
+    </div>
+</div>

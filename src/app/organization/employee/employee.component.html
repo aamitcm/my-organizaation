@@ -1,0 +1,62 @@
+<html>
+
+<body>
+    <div class="employee">
+        <div>
+            <div>
+                Name :
+            </div>
+            <div>
+                <input type="text" name="empname" [(ngModel)]="employee.name" />
+            </div>
+        </div>
+        <div>
+            <div>
+                IsManager :
+            </div>
+            <div>
+                <input type="checkbox" name="ismanager" [(ngModel)]="employee.isManager" />
+            </div>
+        </div>
+        <div>
+            <div>
+                Manager :
+            </div>
+            <div>
+                <select name="managers" [(ngModel)]="employee.id">
+                    <option value="-1">
+                        -Select-
+                    </option>
+                    <option *ngFor="let manager of managers" value="manager.id">
+                        {{manager.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div>
+                Department :
+            </div>
+            <div>
+                <select name="departments" [(ngModel)]="employee.departmentId">
+                    <option value="-1">
+                        -Select-
+                    </option>
+                    <option *ngFor="let department of departments" value="department.id">
+                        {{department.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div>
+                <input type="button" name="btnSave" value="Save" (click)="onSave()" />
+            </div>
+            <div>
+                <input type="button" name="btnCancel" value="Cancel" (click)="onSave()" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
